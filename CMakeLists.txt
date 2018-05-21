@@ -18,24 +18,33 @@ SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 option(WITH_INTEGER "Option description" OFF)
 option(WITH_STRING "Option description" OFF)
 
+set(LIBRARIES -pthread -lboost_system)
+
+if(APPLE)
+    set(ADDITIONAL_LIBRARIES -lboost_thread-mt)
+else (UNIX AND NOT APPLE)
+    set(ADDITIONAL_LIBRARIES -lboost_thread)
+endif()
+
+
 if(WITH_INTEGER)
   add_definitions(-D CLIENT_INT)
   add_executable(client_int ${PROJECT_SOURCE_DIR}/src/client_pub_sub.cpp)
-  target_link_libraries(client_int -pthread -lboost_thread-mt -lboost_system)
+  target_link_libraries(client_int ${LIBRARIES} ${ADDITIONAL_LIBRARIES})
 
   add_definitions(-D SERVER_INT)
   add_executable(server_int ${PROJECT_SOURCE_DIR}/src/server.cpp)
-  target_link_libraries(server_int -pthread -lboost_thread-mt -lboost_system)
-endif()
+  target_link_libraries(server_int ${LIBRARIES} ${ADDITIONAL_LIBRARIES})
 
-if(WITH_STRING)
+else(WITH_STRING)
   add_definitions(-D CLIENT_STRING)
   add_executable(client_string ${PROJECT_SOURCE_DIR}/src/client_pub_sub.cpp)
-  target_link_libraries(client_string -pthread -lboost_thread-mt -lboost_system)
+  target_link_libraries(client_string ${LIBRARIES} ${ADDITIONAL_LIBRARIES})
 
   add_definitions(-D SERVER_STRING)
   add_executable(server_string ${PROJECT_SOURCE_DIR}/src/server.cpp)
-  target_link_libraries(server_string -pthread -lboost_thread-mt -lboost_system)
+  target_link_libraries(server_string ${LIBRARIES} ${ADDITIONAL_LIBRARIES})
 endif()
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -O3 -Wall -Wextra")
+

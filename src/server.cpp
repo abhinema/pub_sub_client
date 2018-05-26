@@ -9,18 +9,22 @@
 #include "server.h"
 
 int main(int argc, char** argv)  {
-    if(argc != 2)  {
-        std::cerr<<"Wrong Syntax\nUse Command ./server <DATA/STRING>"<<endl;
+    if(argc != 4)  {
+        std::cerr<<"Wrong Syntax\nUse Command ./server <IP> <PORT> <DATA/STRING>"<<endl;
         return -1;
     }
+
+    string ip = argv[1];
+    short unsigned int port = atoi(argv[2]);
+
 #ifdef SERVER_INT
-    int i = atoi(argv[1]);
-    boost::scoped_thread<> t1(server<int>,i);
+    int i = atoi(argv[3]);
+    boost::scoped_thread<> t1(server<int>,i ,ip, port);
 #endif
     
 #ifdef SERVER_STRING
-    string i = argv[1];
-    boost::scoped_thread<> t1(server<string>,i);
+    string i = argv[3];
+    boost::scoped_thread<> t1(server<string>,i,ip, port);
 #endif
     return 0;
 }

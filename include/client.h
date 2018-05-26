@@ -9,18 +9,18 @@
 #define client_h
 
 #include <boost/asio.hpp>
-
 #include <typeinfo>
 #include <string>
 #include <boost/units/detail/utility.hpp>
+#include <boost/thread/scoped_thread.hpp>
 
 #include "pub_sub.h"
 template <typename T>
-void client(const array<T,10> &eventList) try {
+void client(const array<T,10> &eventList,string ip, string port) try {
 	dispatcher<T> d;
 	Module<T> M(d, eventList);
 
-	while(1) if(tcp::iostream s{"127.0.0.1", "12345"}) {
+	while(1) if(tcp::iostream s{ip.c_str(), port.c_str()}) {
 		T p;
 		int i;
 		string str;

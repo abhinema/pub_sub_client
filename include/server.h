@@ -11,9 +11,9 @@ using namespace std;
 using boost::asio::ip::tcp;
 
 template <typename T>
-void server(T val) try {
+void server(T val, string ip, short unsigned int port) try {
     boost::asio::io_service io_service;
-    tcp::acceptor acceptor(io_service, tcp::endpoint{boost::asio::ip::address::from_string("127.0.0.1"), 12345});
+    tcp::acceptor acceptor(io_service, tcp::endpoint{boost::asio::ip::address::from_string(ip.c_str()), port});
 
     tcp::iostream stream;
     acceptor.accept(*stream.rdbuf());

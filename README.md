@@ -1,5 +1,5 @@
 Build Commands:
-===============
+
 1. Make build directory.
 
 2.a cmake .. -DWITH_INTEGER=ON
@@ -11,7 +11,7 @@ Will build client_string and server_string for string event passing from server 
 3. Make
 
 Run:
-====
+
 1. Go to bin folder
 
 2.a 

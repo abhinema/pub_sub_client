@@ -10,12 +10,17 @@ Will build client_string and server_string for string event passing from server 
 
 3. Make
 
-4. Got to bin folder
+Run:
+====
+1. Go to bin folder
 
-5. ./client_int & ./server_int 0
-# Received Event: 0
+2.a 
+./client_int & ./server_int 0
+Received Event: 0
 
+2.b
 ./client_int & ./server_int 10
 Event :10 ************** Not subscribed ************** 
 
+Note:
 Events can be changed in client_pub_sub.cpp.

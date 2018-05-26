@@ -1,4 +1,4 @@
-Build Commands:
+#Build Commands:
 
 1. Make build directory.
 
@@ -10,7 +10,7 @@ Will build client_string and server_string for string event passing from server 
 
 3. Make
 
-Run:
+#Run:
 
 1. Go to bin folder
 

@@ -7,6 +7,7 @@ sudo apt-get install libboost-all-dev cmake
 ### Build Commands:
 
 1. Make build directory.
+
 2.a cmake .. -DWITH_INTEGER=ON
 Will build client_int and server_int for integer event passing from server to client.
 

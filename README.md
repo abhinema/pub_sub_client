@@ -15,21 +15,22 @@ Will build rcv_int and sender_int for integer event passing from sender to recei
 Will build rcv_string and sender_string for string event passing from sender to receive modules.
 
 ## 3. Make
+Run Make command
 
 ### Run:
-1. Go to bin folder
+## 1. Go to bin folder
 
-2.a 
+## 2.a 
 On one console use ./rcv_int 127.0.0.1 1234 
 and on another use ./sender_int 127.0.0.1 1234 0
 
 Client Console will print:  Received Event: 0
 
-2.b
+## 2.b
 On one console use ./rcv_string 127.0.0.1 1234 
 and on another use ./sender_string 127.0.0.1 1234 c++
 
 Client Console will print:  Received Event: c++
 
-Note:
+# Note:
 Events can be changed in client_pub_sub.cpp.

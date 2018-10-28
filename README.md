@@ -6,15 +6,15 @@ sudo apt-get install libboost-all-dev cmake
 
 ### Build Commands:
 
-##1. Make build directory.
+## 1. Make build directory.
 
-#2.a cmake .. -DWITH_INTEGER=ON
+## 2.a cmake .. -DWITH_INTEGER=ON
 Will build rcv_int and sender_int for integer event passing from sender to receive modules.
 
-#2.b cmake .. -DWITH_STRING=ON
+## 2.b cmake .. -DWITH_STRING=ON
 Will build rcv_string and sender_string for string event passing from sender to receive modules.
 
-3. Make
+## 3. Make
 
 ### Run:
 1. Go to bin folder

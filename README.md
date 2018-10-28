@@ -1,18 +1,18 @@
 # Publisher Subscriber Client and Server
-This is C++ code for Pub/Sub design pattern using Client and Server 
+This is C++ code for Pub/Sub design pattern using Receive and Sender 
 
 ### Library Dependencies (Linux Ubuntu 18.04)
 sudo apt-get install libboost-all-dev cmake
 
 ### Build Commands:
 
-1. Make build directory.
+##1. Make build directory.
 
-2.a cmake .. -DWITH_INTEGER=ON
-Will build client_int and server_int for integer event passing from server to client.
+#2.a cmake .. -DWITH_INTEGER=ON
+Will build rcv_int and sender_int for integer event passing from sender to receive modules.
 
-2.b cmake .. -DWITH_STRING=ON
-Will build client_string and server_string for string event passing from server to client.
+#2.b cmake .. -DWITH_STRING=ON
+Will build rcv_string and sender_string for string event passing from sender to receive modules.
 
 3. Make
 
@@ -20,14 +20,14 @@ Will build client_string and server_string for string event passing from server 
 1. Go to bin folder
 
 2.a 
-On one console use ./client_int 127.0.0.1 1234 
-and on another use ./server_int 127.0.0.1 1234 0
+On one console use ./rcv_int 127.0.0.1 1234 
+and on another use ./sender_int 127.0.0.1 1234 0
 
 Client Console will print:  Received Event: 0
 
 2.b
-On one console use ./client_string 127.0.0.1 1234 
-and on another use ./server_string 127.0.0.1 1234 c++
+On one console use ./rcv_string 127.0.0.1 1234 
+and on another use ./sender_string 127.0.0.1 1234 c++
 
 Client Console will print:  Received Event: c++
 

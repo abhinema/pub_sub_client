@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.0)
 
 # Project's name
-project(publisher_subscriber_with_client_server)
+project(publisher_subscriber_with_client_and_sender)
 # Set the output folder where your program will be created
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/bin)
 #set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
@@ -28,22 +28,22 @@ endif()
 
 
 if(WITH_INTEGER)
-  add_definitions(-D CLIENT_INT)
-  add_executable(client_int ${PROJECT_SOURCE_DIR}/src/client_pub_sub.cpp)
-  target_link_libraries(client_int ${LIBRARIES} ${ADDITIONAL_LIBRARIES})
+  add_definitions(-D RCV_INT)
+  add_executable(rcv_int ${PROJECT_SOURCE_DIR}/src/client_pub_sub.cpp)
+  target_link_libraries(rcv_int ${LIBRARIES} ${ADDITIONAL_LIBRARIES})
 
-  add_definitions(-D SERVER_INT)
-  add_executable(server_int ${PROJECT_SOURCE_DIR}/src/server.cpp)
-  target_link_libraries(server_int ${LIBRARIES} ${ADDITIONAL_LIBRARIES})
+  add_definitions(-D SENDER_INT)
+  add_executable(sender_int ${PROJECT_SOURCE_DIR}/src/sender.cpp)
+  target_link_libraries(sender_int ${LIBRARIES} ${ADDITIONAL_LIBRARIES})
 
 else(WITH_STRING)
-  add_definitions(-D CLIENT_STRING)
-  add_executable(client_string ${PROJECT_SOURCE_DIR}/src/client_pub_sub.cpp)
-  target_link_libraries(client_string ${LIBRARIES} ${ADDITIONAL_LIBRARIES})
+  add_definitions(-D RCV_STRING)
+  add_executable(rcv_string ${PROJECT_SOURCE_DIR}/src/client_pub_sub.cpp)
+  target_link_libraries(rcv_string ${LIBRARIES} ${ADDITIONAL_LIBRARIES})
 
-  add_definitions(-D SERVER_STRING)
-  add_executable(server_string ${PROJECT_SOURCE_DIR}/src/server.cpp)
-  target_link_libraries(server_string ${LIBRARIES} ${ADDITIONAL_LIBRARIES})
+  add_definitions(-D SENDER_STRING)
+  add_executable(sender_string ${PROJECT_SOURCE_DIR}/src/sender.cpp)
+  target_link_libraries(sender_string ${LIBRARIES} ${ADDITIONAL_LIBRARIES})
 endif()
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -O3 -Wall -Wextra")

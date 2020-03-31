@@ -3,32 +3,32 @@
 # Publisher Subscriber Client and Server
 This is C++ code for Pub/Sub design pattern using Receive and Sender 
 
-### Library Dependencies (Linux Ubuntu 18.04)
+## Library Dependencies (Linux Ubuntu 18.04)
 sudo apt-get install libboost-all-dev cmake
 
-### Build Commands:
+## Build Commands:
 
-## 1. Make build directory.
+### 1 Make build directory.
 
-## 2.a cmake .. -DWITH_INTEGER=ON
+### 2a cmake .. -DWITH_INTEGER=ON
 Will build rcv_int and sender_int for integer event passing from sender to receive modules.
 
-## 2.b cmake .. -DWITH_STRING=ON
+### 2b cmake .. -DWITH_STRING=ON
 Will build rcv_string and sender_string for string event passing from sender to receive modules.
 
-## 3. Make
+## 3 Make
 Run Make command
 
-### Run:
-## 1. Go to bin folder
+## Run:
+### 1 Go to bin folder
 
-## 2.a 
+### 2a 
 On one console use ./rcv_int 127.0.0.1 1234 
 and on another use ./sender_int 127.0.0.1 1234 0
 
 Client Console will print:  Received Event: 0
 
-## 2.b
+### 2b
 On one console use ./rcv_string 127.0.0.1 1234 
 and on another use ./sender_string 127.0.0.1 1234 c++
 

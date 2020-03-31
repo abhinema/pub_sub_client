@@ -19,12 +19,18 @@ using namespace std;
  * These functions will be called with subscribe events
  */
 #ifdef RCV_STRING
-int parse(string a){
+/* 
+ * codacy Issue: Function parameter 'a' should be passed by const reference.
+ */
+int parse( const string &a){
     cout<<"Received Event: "<<a<<" in parse() api"<<a<<endl;     
 return 0;
 }
+/* 
+ * codacy Issue: Function parameter 'a' should be passed by const reference.
+ */
 
-int anotherParse(string a){
+int anotherParse( const string &a){
     cout<<"Received Event: "<<a<<" in anotherParse() api"<<a<<endl;     
 return 0;
 }

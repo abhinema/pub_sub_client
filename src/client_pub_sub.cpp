@@ -22,7 +22,7 @@ using namespace std;
 /* 
  * codacy Issue: Function parameter 'a' should be passed by const reference.
  */
-int parse( const string a){
+int parse( const string &a){
     cout<<"Received Event: "<<a<<" in parse() api"<<a<<endl;     
 return 0;
 }
@@ -30,7 +30,7 @@ return 0;
  * codacy Issue: Function parameter 'a' should be passed by const reference.
  */
 
-int anotherParse( const string a){
+int anotherParse( const string &a){
     cout<<"Received Event: "<<a<<" in anotherParse() api"<<a<<endl;     
 return 0;
 }

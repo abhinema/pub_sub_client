@@ -21,6 +21,3 @@ jobs:
       run: cd build && make
     - name: run
       run: pwd && sudo chmod +x command.sh && ./command.sh
-    - uses: actions/checkout@master
-    - uses: codecov/codecov-action@v1
-  

@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Set and install dependencies
+      run: sudo apt-get install libboost-all-dev cmake
     - name: configure
       run: mkdir build && cd build && cmake -DWITH_INTEGER=ON ..
     - name: make

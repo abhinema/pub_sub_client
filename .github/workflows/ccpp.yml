@@ -14,10 +14,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: configure
-      run: ./configure
+      run: mkdir build && cd build && cmake -DWITH_INTEGER=ON ..
     - name: make
       run: make
     - name: make check
-      run: make check
+      run: cd bin; ./rcv_int 127.0.0.1 1234 && ./sender_int 127.0.0.1 1234 0
     - name: make distcheck
       run: make distcheck

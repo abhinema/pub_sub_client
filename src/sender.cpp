@@ -13,8 +13,15 @@ int main(int argc, char** argv)  {
         std::cerr<<"Wrong Syntax\nUse Command ./sender <IP> <PORT> <DATA/STRING>"<<endl;
         return -1;
     }
-
+    /*
+    * codacy issue: Variable 'ip' is assigned a value that is never used.
+    * Solution : Ignore issue. As this is getting used in SENDER_INT & SENDER_STRING
+    */
     string ip = argv[1];
+    /*
+    * codacy issue: Variable 'port' is assigned a value that is never used.
+    * Solution : Ignore issue. As this is getting used in SENDER_INT & SENDER_STRING
+    */
     short unsigned int port = atoi(argv[2]);
 
 #ifdef SENDER_INT

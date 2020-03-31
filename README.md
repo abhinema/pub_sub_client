@@ -1,3 +1,5 @@
+![C/C++ CI](https://github.com/abhinema/pub_sub_client/workflows/C/C++%20CI/badge.svg?branch=master)
+
 # Publisher Subscriber Client and Server
 This is C++ code for Pub/Sub design pattern using Receive and Sender 
 

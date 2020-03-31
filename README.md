@@ -1,6 +1,9 @@
 ![C/C++ CI](https://github.com/abhinema/pub_sub_client/workflows/C/C++%20CI/badge.svg?branch=master)
 
 # Publisher Subscriber Client and Server
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ccfaa45653fb409694ea7508edf144c7)](https://app.codacy.com/manual/abhinema/pub_sub_client?utm_source=github.com&utm_medium=referral&utm_content=abhinema/pub_sub_client&utm_campaign=Badge_Grade_Dashboard)
+
 This is C++ code for Pub/Sub design pattern using Receive and Sender 
 
 ## Library Dependencies (Linux Ubuntu 18.04)

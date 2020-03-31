@@ -16,7 +16,7 @@ jobs:
     - name: configure
       run: mkdir build && cd build && cmake -DWITH_INTEGER=ON ..
     - name: make
-      run: make
+      run: cd build && make
     - name: make check
       run: cd bin; ./rcv_int 127.0.0.1 1234 && ./sender_int 127.0.0.1 1234 0
     - name: make distcheck

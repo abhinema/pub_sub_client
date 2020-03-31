@@ -20,6 +20,8 @@ jobs:
     - name: make
       run: cd build && make
     - name: make check
+      run: make check
+    - name: run
       run: pwd && sudo chmod +x command.sh && ./command.sh
     - name: make distcheck
       run: make distcheck

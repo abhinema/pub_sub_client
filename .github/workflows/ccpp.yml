@@ -21,3 +21,6 @@ jobs:
       run: cd build && make
     - name: run
       run: pwd && sudo chmod +x command.sh && ./command.sh
+    - name: Coverage check
+      uses: devmasx/coverage-check-action@v1.1.0
+  

@@ -12,6 +12,8 @@ set(INCLUDE_PATH ${PROJECT_SOURCE_DIR}/include)
 # The following folder will be included
 include_directories("${INCLUDE_PATH}")
 
+
+
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 
@@ -19,6 +21,9 @@ option(WITH_INTEGER "Option description" OFF)
 option(WITH_STRING "Option description" OFF)
 
 set(LIBRARIES -pthread -lboost_system)
+
+include_directories( "/usr/local/Cellar/boost/1.72.0_1/include")
+link_directories( "/usr/local/Cellar/boost/1.72.0_1/lib")
 
 if(APPLE)
     set(ADDITIONAL_LIBRARIES -lboost_thread-mt)
@@ -37,6 +42,7 @@ if(WITH_INTEGER)
   target_link_libraries(sender_int ${LIBRARIES} ${ADDITIONAL_LIBRARIES})
 
 else(WITH_STRING)
+  include_directories("${INCLUDE_PATH}")
   add_definitions(-D RCV_STRING)
   add_executable(rcv_string ${PROJECT_SOURCE_DIR}/src/client_pub_sub.cpp)
   target_link_libraries(rcv_string ${LIBRARIES} ${ADDITIONAL_LIBRARIES})
